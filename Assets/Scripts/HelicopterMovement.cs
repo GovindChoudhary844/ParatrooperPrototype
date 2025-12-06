@@ -21,6 +21,13 @@ public class HelicopterMovement : MonoBehaviour
             ? transform.position.x >= destroyX
             : transform.position.x <= destroyX;
 
-        if (reached) Destroy(gameObject);
+        if (reached)
+        {
+            // score: 30 plane, 20 heli
+            int points = CompareTag("Plane") ? 30 : 20;
+            ScoreManager.Instance.AddScore(points);
+
+            Destroy(gameObject);
+        }
     }
 }

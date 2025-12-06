@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 5293603455740300921}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -331,6 +331,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 4639625314266237715, guid: 536c3f9039b858d43a2e0f7efa71c532, type: 3}
-  turret: {fileID: 0}
   dropOffsetY: -0.5
   dropTolerance: 0.3

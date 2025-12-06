@@ -11,6 +11,7 @@ TagManager:
   - TurretBase
   - Turret
   - Bomb
+  - Plane
   layers:
   - Default
   - TransparentFX

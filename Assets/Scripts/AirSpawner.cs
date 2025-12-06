@@ -63,7 +63,9 @@ public class AirSpawner : MonoBehaviour
     private void SpawnPlane()
     {
         GameObject plane = Instantiate(planePrefab, spawnPoint.position, Quaternion.identity);
+
         plane.GetComponent<HelicopterMovement>().Init(planeSpeed, Vector2.right, destroyPoint.position.x);
+
         plane.transform.rotation = Quaternion.Euler(0, 0, 0); // face left if you want
     }
 }

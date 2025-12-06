@@ -15,5 +15,6 @@ public class DestroyOnBullet : MonoBehaviour
 
         Destroy(col.gameObject); // bullet
         Destroy(gameObject);     // myself
+        ScoreManager.Instance.AddScore(10);
     }
 }
