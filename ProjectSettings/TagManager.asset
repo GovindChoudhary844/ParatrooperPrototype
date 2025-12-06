@@ -9,6 +9,8 @@ TagManager:
   - Bullet
   - Ground
   - TurretBase
+  - Turret
+  - Bomb
   layers:
   - Default
   - TransparentFX

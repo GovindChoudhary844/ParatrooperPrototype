@@ -10,7 +10,7 @@ public class TurretHealth : MonoBehaviour
         if (TurrentdestroyParticlePrefab != null)
             Instantiate(TurrentdestroyParticlePrefab, transform.position, Quaternion.identity);
 
-        if (c.CompareTag("Paratrooper"))
+        if (c.CompareTag("Paratrooper") || c.CompareTag("Bomb"))
             Destroy(gameObject);
     }
 }
