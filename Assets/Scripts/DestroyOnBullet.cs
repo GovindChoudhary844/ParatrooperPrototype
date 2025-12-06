@@ -1,19 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DestroyOnBullet : MonoBehaviour
 {
-    [SerializeField] private GameObject destroyParticlePrefab; // drag particle here
+    [SerializeField] private GameObject destroyParticlePrefab;
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (!col.CompareTag("Bullet")) return;
 
-        // spawn one-shot particle (auto-destroy when finished)
+        // particle
         if (destroyParticlePrefab != null)
             Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
 
-        // remove bullet and this object
-        Destroy(col.gameObject);
-        Destroy(gameObject);
+        Destroy(col.gameObject); // bullet
+        Destroy(gameObject);     // myself
     }
 }

@@ -11,6 +11,15 @@ public class ParachuteManager : MonoBehaviour
 
     private bool onGround = false;
 
+    private Rigidbody2D rb;
+    private float baseGravity;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        baseGravity = rb.gravityScale;   // remember normal fall
+    }
+
     void Start()
     {
         parachute.SetActive(false);                       // start closed
@@ -19,7 +28,11 @@ public class ParachuteManager : MonoBehaviour
 
     void OpenParachute()
     {
-        if (!onGround) parachute.SetActive(true);
+        if (!onGround)
+        {
+            parachute.SetActive(true);
+            rb.gravityScale = baseGravity * 0.15f; // gentle descent
+        }
     }
 
     /* call this from your ground-check script (or use OnCollisionEnter2D here) */
@@ -27,6 +40,7 @@ public class ParachuteManager : MonoBehaviour
     {
         onGround = true;
         parachute.SetActive(false);
+        rb.gravityScale = baseGravity;
     }
 
     /* ---------- optional self-contained ground check ---------- */
