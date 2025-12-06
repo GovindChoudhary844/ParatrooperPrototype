@@ -12,6 +12,8 @@ public class ParachuteHit : MonoBehaviour
         if (parachuteDestroyParticle != null)
             Instantiate(parachuteDestroyParticle, transform.position, Quaternion.identity);
 
+        // ---- AUDIO ----
+        AudioManager.Instance.PlaySound(AudioManager.Instance.DestroyParachute);
         // tell parent the chute is gone
         ParachuteManager pm = transform.GetComponentInParent<ParachuteManager>();
         if (pm) pm.ParachuteDestroyed();

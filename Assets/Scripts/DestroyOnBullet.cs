@@ -13,6 +13,8 @@ public class DestroyOnBullet : MonoBehaviour
         if (destroyParticlePrefab != null)
             Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
 
+        AudioManager.Instance.PlaySound(AudioManager.Instance.DestroyHeliPlane);
+
         Destroy(col.gameObject); // bullet
         Destroy(gameObject);     // myself
         GameManager.Instance.AddScore(10);

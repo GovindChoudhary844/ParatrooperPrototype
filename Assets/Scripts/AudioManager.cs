@@ -9,6 +9,15 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
 
+    [Header("Game FX")]
+    [SerializeField] private AudioClip destroyHeliPlane; // helicopter + plane
+    [SerializeField] private AudioClip destroyTroop;
+    [SerializeField] private AudioClip destroyParachute;
+    [SerializeField] private AudioClip turretFire;
+    [SerializeField] private AudioClip planeBombDrop;
+    [SerializeField] private AudioClip gameOver;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -28,6 +37,12 @@ public class AudioManager : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
 
-
+    // read-only getters so other scripts can still pass the clips to PlaySound()
+    public AudioClip DestroyHeliPlane => destroyHeliPlane;
+    public AudioClip DestroyTroop => destroyTroop;
+    public AudioClip DestroyParachute => destroyParachute;
+    public AudioClip TurretFire => turretFire;
+    public AudioClip PlaneBombDrop => planeBombDrop;
+    public AudioClip GameOver => gameOver;
 
 }

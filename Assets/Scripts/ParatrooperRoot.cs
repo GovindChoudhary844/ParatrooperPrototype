@@ -16,6 +16,10 @@ public class ParatrooperRoot : MonoBehaviour
         if (destroyParticlePrefab != null)
             Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
 
+        // ---- AUDIO ----
+        AudioManager.Instance.PlaySound(AudioManager.Instance.DestroyTroop);
+
+
         // 2. destroy parachute (if still there)
         if (parachute != null) Destroy(parachute);
 

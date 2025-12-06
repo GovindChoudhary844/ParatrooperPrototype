@@ -24,6 +24,9 @@ public class TurretAttack : MonoBehaviour
             rb.velocity = firePoint.up * bulletSpeed;
         }
 
+        // ---- AUDIO ----
+        AudioManager.Instance.PlaySound(AudioManager.Instance.TurretFire);
+
         Destroy(bullet, 3f);
     }
 }

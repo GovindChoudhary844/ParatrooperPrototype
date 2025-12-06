@@ -25,6 +25,9 @@ public class PlaneBombDropper : MonoBehaviour
             dropped = true;
             Vector3 spawnPos = transform.position + Vector3.up * dropOffsetY;
             Instantiate(bombPrefab, spawnPos, Quaternion.identity);
+
+            // ---- AUDIO ----
+            AudioManager.Instance.PlaySound(AudioManager.Instance.PlaneBombDrop);
         }
     }
 }

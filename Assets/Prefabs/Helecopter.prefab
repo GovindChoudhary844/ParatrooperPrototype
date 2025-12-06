@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8256068381673994679}
   - component: {fileID: 2362276105786587788}
   - component: {fileID: -6855259058402221730}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Helecopter
   m_TagString: Helecopter
   m_Icon: {fileID: 0}
@@ -140,9 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e083b4e8a8974b4dabbb381a693e8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  direction: {x: 0, y: 0}
-  destroyX: 0
 --- !u!114 &2362276105786587788
 MonoBehaviour:
   m_ObjectHideFlags: 0
