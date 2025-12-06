@@ -25,7 +25,7 @@ public class HelicopterMovement : MonoBehaviour
         {
             // score: 30 plane, 20 heli
             int points = CompareTag("Plane") ? 30 : 20;
-            ScoreManager.Instance.AddScore(points);
+            GameManager.Instance.AddScore(points);
 
             Destroy(gameObject);
         }

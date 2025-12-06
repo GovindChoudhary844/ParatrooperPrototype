@@ -22,6 +22,6 @@ public class ParatrooperRoot : MonoBehaviour
         // 3. destroy bullet + trooper
         Destroy(c.gameObject);
         Destroy(gameObject);
-        ScoreManager.Instance.AddScore(10);
+        GameManager.Instance.AddScore(10);
     }
 }

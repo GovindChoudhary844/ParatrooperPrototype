@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class TurretHealth : MonoBehaviour
 {
-    [SerializeField] private GameObject TurrentdestroyParticlePrefab;
+    [SerializeField] private GameObject turretDestroyParticlePrefab;
+
+    // event any script can listen to
+    public static System.Action OnTurretDestroyed;
 
     void OnTriggerEnter2D(Collider2D c)
     {
-        // particle
-        if (TurrentdestroyParticlePrefab != null)
-            Instantiate(TurrentdestroyParticlePrefab, transform.position, Quaternion.identity);
+        if (!c.CompareTag("Paratrooper") && !c.CompareTag("Bomb")) return;
 
-        if (c.CompareTag("Paratrooper") || c.CompareTag("Bomb"))
-            Destroy(gameObject);
+        // particle
+        if (turretDestroyParticlePrefab != null)
+            Instantiate(turretDestroyParticlePrefab, transform.position, Quaternion.identity);
+
+        // notify listeners before suicide
+        OnTurretDestroyed?.Invoke();
+
+        Destroy(gameObject);
     }
 }

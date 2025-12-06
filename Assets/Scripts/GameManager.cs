@@ -1,16 +1,23 @@
+using System;
 using TMPro;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI scoreText; // live score
     [SerializeField] private TextMeshProUGUI recordText; // highest
 
+    [SerializeField] private EnemyMovement leftEnemyMovement;
+    [SerializeField] private EnemyMovement rightEnemyMovement;
+
+    public Transform turrent;
+
     private int score;
     private int record;
 
-    public static ScoreManager Instance { get; private set; }
+
+    public static GameManager Instance { get; private set; }
 
     void Awake()
     {
@@ -41,4 +48,19 @@ public class ScoreManager : MonoBehaviour
         if (scoreText != null) scoreText.text = "Score: " + score;
         if (recordText != null) recordText.text = "Record: " + record;
     }
+
+    public void OnEnemyLanded(Transform enemy)
+    {
+        if (enemy == null) return;
+        if (enemy.position.x < turrent.position.x)
+        {
+            leftEnemyMovement.AddTroop(enemy);
+        }
+        else
+        {
+            rightEnemyMovement.AddTroop(enemy);
+
+        }
+    }
+
 }

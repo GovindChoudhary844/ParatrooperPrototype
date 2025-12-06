@@ -11,9 +11,8 @@ public class PlaneBombDropper : MonoBehaviour
 
     void Start()
     {
-        // find live turret once
-        GameObject t = GameObject.FindGameObjectWithTag("Turret");
-        if (t != null) turret = t.transform;
+
+        turret = GameManager.Instance.turrent;
     }
 
     void Update()

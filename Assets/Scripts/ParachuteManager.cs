@@ -13,6 +13,9 @@ public class ParachuteManager : MonoBehaviour
     [Header("Timing")]
     [SerializeField] private float openDelay = 0.2f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip landingSound;
+
     private bool onGround = false;
     private bool paraIsDestroyed = false;
 
@@ -49,6 +52,11 @@ public class ParachuteManager : MonoBehaviour
 
         if (paraIsDestroyed)
             DieWithPrefab();
+        else
+        {
+            GameManager.Instance.OnEnemyLanded(transform);
+            AudioManager.Instance.PlaySound(landingSound);
+        }
     }
 
     private void DieWithPrefab()

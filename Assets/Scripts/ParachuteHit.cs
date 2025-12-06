@@ -17,7 +17,7 @@ public class ParachuteHit : MonoBehaviour
         if (pm) pm.ParachuteDestroyed();
 
         Destroy(gameObject);   // destroy only the parachute child
-        ScoreManager.Instance.AddScore(5);
+        GameManager.Instance.AddScore(5);
         Destroy(c.gameObject); // bullet
     }
 }

@@ -13,8 +13,7 @@ public class HelicopterSpawner : MonoBehaviour
     {
         // which way do we have to go?
         Vector2 dir = spawnPoint.position.x < destroyPoint.position.x
-            ? Vector2.right
-            : Vector2.left;
+            ? Vector2.right : Vector2.left;
 
         // spawn helicopter
         GameObject heli = Instantiate(helicopterPrefab, spawnPoint.position, Quaternion.identity);
